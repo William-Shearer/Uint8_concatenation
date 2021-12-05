@@ -22,11 +22,11 @@ int main(int argc, char* argv[])
 	}
 
 	// The easiest way to delve into separating a Uint32 into four Uint 8 "sub variables", independently initialized.
-		Uint32 main_variable = 0;  // Create the Uint32 variable
+	Uint32 main_variable = 0;  // Create the Uint32 variable
 	Uint32* ptr_main_variable = &main_variable; // Get a pointer to the Uint32 variable
 	Uint8* channels = (Uint8*)ptr_main_variable; // Create a Uint8 pointer to the address of the first byte of the Uint32
 	
-	// These "channels" will now act as an array of four elements to the Uint32
+	// These "channels" will now act as an array of four bytes to the Uint32
 
 	channels[0] = 0x3D;
 	channels[1] = 0xF1;
@@ -40,7 +40,7 @@ int main(int argc, char* argv[])
 	printf("Concatenated to: 0x%08x\n\n", main_variable);
 
 	// Now, the same thing for an array. To make it interesting, a dynamically allocated array. Fixed arrays handled the same way.
-		bool array_created = false;
+	bool array_created = false;
 	int array_size = 5;
 	int i = 0;
 	Uint32* dynamic_main_variable = NULL;
